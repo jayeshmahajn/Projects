@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document to PDF Converter</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-file-pdf"></i> Document to PDF Converter</h1>
+            <p class="subtitle">Convert your documents to PDF format instantly</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <form id="uploadForm" enctype="multipart/form-data" method="post" action="/convert">
+                    <div class="drop-zone" id="dropZone">
+                        <div class="drop-zone-content">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <h3>Drag & Drop your file here</h3>
+                            <p>or click to browse</p>
+                            <input type="file" id="fileInput" name="file" accept=".doc,.docx,.xls,.xlsx,.ppt,.pptx,.odt,.ods,.odp,.rtf" required>
+                        </div>
+                    </div>
+
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="file-details">
+                            <i class="fas fa-file"></i>
+                            <span class="file-name"></span>
+                            <span class="file-size"></span>
+                        </div>
+                        <button type="button" class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="options">
+                        <div class="input-group">
+                            <label for="customFilename">Custom filename (optional):</label>
+                            <input type="text" id="customFilename" name="filename" placeholder="Enter custom filename">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="convert-btn" id="convertBtn" disabled>
+                        <i class="fas fa-magic"></i>
+                        Convert to PDF
+                    </button>
+                </form>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Converting...</p>
+                </div>
+            </div>
+
+            <div class="supported-formats">
+                <h3>Supported Formats</h3>
+                <div class="format-grid">
+                    <div class="format-item">
+                        <i class="fas fa-file-word"></i>
+                        <span>Word Documents</span>
+                        <small>.doc, .docx</small>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-excel"></i>
+                        <span>Excel Spreadsheets</span>
+                        <small>.xls, .xlsx</small>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-powerpoint"></i>
+                        <span>PowerPoint Presentations</span>
+                        <small>.ppt, .pptx</small>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>OpenDocument</span>
+                        <small>.odt, .ods, .odp</small>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-text"></i>
+                        <span>Rich Text</span>
+                        <small>.rtf</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="api-info">
+                <h4>API Access</h4>
+                <p>Use our REST API for programmatic access:</p>
+                <code>POST /api/convert</code>
+                <a href="/api/health" target="_blank">Check API Status</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/upload.js"></script>
+</body>
+</html>

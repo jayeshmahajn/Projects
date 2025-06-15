@@ -1,0 +1,5 @@
+com\converter\doctopdf\DocToPdf\config\WebConfig.class
+com\converter\doctopdf\DocToPdf\service\DocumentConverterService.class
+com\converter\doctopdf\DocToPdf\config\LibreOfficeConfig.class
+com\converter\doctopdf\DocToPdf\DocToPdfApplication.class
+com\converter\doctopdf\DocToPdf\controller\DocumentController.class

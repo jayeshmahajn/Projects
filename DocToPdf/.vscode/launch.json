@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DocToPdfApplication<DocToPdf>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.converter.doctopdf.DocToPdf.DocToPdfApplication",
+            "projectName": "DocToPdf",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

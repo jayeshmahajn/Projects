@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.converter.doctopdf.DocToPdf.DocToPdfApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.779 s -- in com.converter.doctopdf.DocToPdf.DocToPdfApplicationTests
